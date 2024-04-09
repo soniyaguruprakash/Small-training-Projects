@@ -1,2 +1,2 @@
-# test projects
+#  Training Projects
 
