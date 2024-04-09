@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width:auto;
+            min-height: 100vh;
+            background-color: #001524
+           /*  position: relative; */
+        }
+        .Contain{
+
+            width: 600px;
+           min-height: 650px;
+            border:2px solid #001524;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 20px;
+            background-color: #445D48;
+            border-radius: 20px;
+            border-top: 5px solid #001524;
+            border-right: 5px solid #001524;
+
+        }
+        .Contain h1{
+            
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        textarea{
+          margin: 25px;
+          background-color: #D6CC99;
+          font-weight: 500;
+          font-size :19px;
+          border-radius : 20px;
+          border-bottom: 5px solid #001524;
+          border-left: 5px solid 001524;
+      }
+        button{
+            padding:10px;
+            background-color: #D6CC99;
+            font-weight: 800;
+            margin-left: 25px;
+            border-radius: 20px;
+            border:5px solid #001524;
+             } 
+       #demo{
+
+        padding:20px;
+        margin:auto 0;
+        font-size: 25px;
+        font-weight: 900;
+
+        
+       }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div class= "Contain">
+        <h1> Words Counter</h1>
+        <div>
+
+        <textarea id="input" rows="18" cols="40" ></textarea>
+        </div>
+        <div><button onclick="convert()"> Calculate Words</button>
+        <button onclick="clear()">Clear counts</button>
+        </div>
+
+        <div id="demo"></div>
+    </div>
+
+
+
+    <script>
+      
+
+       function convert(){
+        let str = document.getElementById("input").value
+
+        let count = str.split(" ").length;
+
+        let result = document.getElementById("demo")
+        result.innerHTML = count
+       }
+      
+       
+
+
+       
+    </script>
+</body>
+</html>
