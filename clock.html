@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            background-image: url("images/timmer.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            
+        }
+       
+        #container{
+            width:500px;
+            height: 100px;
+            
+            display: flex;
+            position: absolute;
+            left:33%;
+            bottom:30%;
+            place-content: center;
+            
+            
+        
+        }
+        span{
+            color:rgba(255, 0, 0, 0.815);
+            font-size: 5.5rem;
+           font-weight: bolder;
+           
+        }
+        #ampm{
+            font-size: 3rem;
+            padding: 15px;
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    <span id="hr"></span>
+    <span>:</span>
+    <span id="min"></span>
+    <span>:</span>
+    <span id="sec"></span>
+    <span id="ampm">  </span>
+    
+</div>
+
+
+
+<script>
+    let ampm = document.getElementById("ampm")
+    
+    function displayTime(){
+    const dat = new Date()
+    document.getElementById("hr").innerHTML =padnum(dat.getHours());
+    document.getElementById("min").innerHTML =padnum(dat. getMinutes());
+    document.getElementById("sec").innerHTML = padnum(dat.getSeconds());
+    if(hr>12){
+        hr=hr-12;
+        ampm.innerHTML="PM"
+    }
+    else ampm.innerHTML="AM"
+    }
+    function padnum(num){
+
+       return num<10? "0"+num : num
+
+    }
+
+    setInterval(displayTime,1000)
+
+    
+</script>
+
+</body>
+</html>
