@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Palindrome</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width:auto;
+            min-height: 100vh;
+            background-color: #C70039
+           /*  position: relative; */
+        }
+        .Contain{
+
+            width: 600px;
+           min-height: 650px;
+            border:2px solid #001524;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 20px;
+            background-color: #FF6969;
+            border-radius: 20px;
+            border-top: 5px solid #001524;
+            border-right: 5px solid #001524;
+
+        }
+        .Contain h1{
+            
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        
+        input {
+
+            border:5px solid #001524;
+            padding:20px;
+            margin: 40px;
+            width:500px;
+            background-color:#D0E7D2;
+        }
+      
+        button{
+            padding:10px;
+            background-color: #141E46;
+            font-weight: 800;
+            margin-left: 25px;
+            border-radius: 20px;
+            border:5px solid #001524;
+            color: whitesmoke;
+             } 
+       #demo{
+
+        padding:5px;
+        margin:auto 0;
+        font-size: 25px;
+        font-weight: 900;
+
+        
+       }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div class= "Contain">
+        <h1>Find out palindrome</h1>
+        <div>
+
+       <input id="input">
+        </div>
+        <div><button onclick="findOut()"> Click on me</button>
+        
+        </div>
+
+        <div id="demo"></div>
+    </div>
+
+
+
+    <script>
+      
+
+         function findOut(){
+            let getWordFromWeb = document.getElementById("input").value
+
+            const seperateTheWord = getWordFromWeb.split("")
+
+            const reversedWord = seperateTheWord.reverse()
+            const newWord = reversedWord.join('');   
+            
+            let result ;
+
+            if(getWordFromWeb == newWord){
+
+            /* let result = document.getElementById("demo") */
+                result = "This is An Palindrome";
+
+            }
+            else{
+                /* result = document.getElementById("demo"); */
+
+                result= "This is not an Palindrome"
+            }
+        
+                let res = document.getElementById("demo").innerHTML= result;
+             }
+        
+
+      
+
+       
+       
+       
+         /* for(let i=0; i< reversedName.length; i++){
+
+           let text="";
+
+            text+= reversedName[i];
+             
+            console.log(text)
+           
+        }  */
+        
+        
+      
+      
+       
+
+
+       
+    </script>
+</body>
+</html>
